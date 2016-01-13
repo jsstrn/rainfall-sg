@@ -2,7 +2,7 @@
 
 const Chart = require('chart.js')
 const _ = require('lodash')
-
+const fetch = require('whatwg-fetch')
 const months = [
   'January', 'February', 'March',
   'April', 'May', 'June',
@@ -37,10 +37,10 @@ fetch('assets/data/rainfall.json')
 
     function getDatasets () {
       const datasets = []
-      for (var byYear in annualRainfall) {
+      for (const byYear in annualRainfall) {
         const label = byYear
         const data = []
-        for (var byMonth in annualRainfall[byYear]) {
+        for (const byMonth in annualRainfall[byYear]) {
           data.push(annualRainfall[byYear][byMonth].total_rainfall)
         }
         const dataset = {
@@ -57,12 +57,12 @@ fetch('assets/data/rainfall.json')
       }
       return datasets
     } // getDataset()
-    var myData = {
+    const myData = {
       labels: months,
       datasets: getDatasets()
     }
-    var ctx = document.querySelector('#chart').getContext('2d')
-    var chart = new Chart(ctx).Bar(myData)
+    const ctx = document.querySelector('#chart').getContext('2d')
+    const chart = new Chart(ctx).Bar(myData)
   })
   .catch(err => {
     throw err
