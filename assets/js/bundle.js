@@ -13,8 +13,8 @@ function getColors() {
   return red + ', ' + green + ', ' + blue;
 }
 
-var minYear = 1975;
-var maxYear = 2015;
+var minYear = 2013;
+var maxYear = 2014;
 function range(data) {
   return data.year >= minYear && data.year <= maxYear;
 }

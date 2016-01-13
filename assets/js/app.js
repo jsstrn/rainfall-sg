@@ -17,8 +17,8 @@ function getColors () {
   return red + ', ' + green + ', ' + blue
 }
 
-const minYear = 1975
-const maxYear = 2015
+const minYear = 2013
+const maxYear = 2014
 function range (data) {
   return (data.year >= minYear && data.year <= maxYear)
 }
