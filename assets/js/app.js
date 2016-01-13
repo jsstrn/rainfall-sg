@@ -2,7 +2,7 @@
 
 const Chart = require('chart.js')
 const _ = require('lodash')
-const fetch = require('whatwg-fetch')
+
 const months = [
   'January', 'February', 'March',
   'April', 'May', 'June',
