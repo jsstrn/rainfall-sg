@@ -12,6 +12,17 @@ const months = [
   'October', 'November', 'December'
 ]
 
+const selectMinYear = document.querySelector('select#min-year')
+const selectMaxYear = document.querySelector('select#max-year')
+
+selectMinYear.addEventListener('change', () => {
+  console.log('You clicked min year')
+})
+
+selectMaxYear.addEventListener('change', () => {
+  console.log('You clicked max year')
+})
+
 function getColors () {
   const red = Math.round(Math.random() * 255)
   const green = Math.round(Math.random() * 255)
