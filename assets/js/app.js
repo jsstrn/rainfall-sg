@@ -1,5 +1,8 @@
 'use strict'
 
+const Chart = require('chart.js')
+const _ = require('lodash')
+
 const months = [
   'January', 'February', 'March',
   'April', 'May', 'June',
@@ -59,7 +62,7 @@ fetch('assets/data/rainfall.json')
       datasets: getDatasets()
     }
     var ctx = document.querySelector('#chart').getContext('2d')
-    var chart = new Chart(ctx).Line(myData)
+    var chart = new Chart(ctx).Bar(myData)
   })
   .catch(err => {
     throw err
