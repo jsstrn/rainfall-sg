@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify ./assets/js/app.js -o ./assets/js/bundle.js -t babelify",
     "watch": "watchify -d ./assets/js/app.js -o ./assets/js/bundle.js -t babelify",
-    "sync": "browser-sync start --server --files "**/*""
+    "sync": "browser-sync start --server --files '**/*'"
   },
   "author": "",
   "license": "MIT",
