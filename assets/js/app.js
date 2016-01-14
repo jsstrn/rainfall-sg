@@ -2,8 +2,9 @@
 import 'whatwg-fetch'
 import Chart from 'chart.js'
 import _ from 'lodash'
-const minYear = 2013
-const maxYear = 2014
+
+let minYear = 2013
+let maxYear = 2015
 
 const months = [
   'January', 'February', 'March',
@@ -15,11 +16,14 @@ const months = [
 const selectMinYear = document.querySelector('select#min-year')
 const selectMaxYear = document.querySelector('select#max-year')
 
-selectMinYear.addEventListener('change', () => {
-  console.log('You clicked min year')
+selectMinYear.addEventListener('change', (e) => {
+  minYear = e.target.value
+  const everyYear = JSON.parse(window.localStorage.getItem('everyYear'))
+  populateSelection(everyYear, minYear)
+  e.target.value = minYear
 })
 
-selectMaxYear.addEventListener('change', () => {
+selectMaxYear.addEventListener('change', (e) => {
   console.log('You clicked max year')
 })
 
@@ -30,18 +34,22 @@ function getColors () {
   return red + ', ' + green + ', ' + blue
 }
 
-function populateSelection (everyYear) {
+function populateSelection (everyYear, minYear) {
   const selectMinYear = document.querySelector('select#min-year')
   const selectMaxYear = document.querySelector('select#max-year')
+  selectMinYear.innerHTML = ''
+  selectMaxYear.innerHTML = ''
   everyYear.forEach((year) => {
     const eachMinYear = document.createElement('option')
     eachMinYear.setAttribute('value', year)
     eachMinYear.textContent = year
     selectMinYear.appendChild(eachMinYear)
-    const eachMaxYear = document.createElement('option')
-    eachMaxYear.setAttribute('value', year)
-    eachMaxYear.textContent = year
-    selectMaxYear.appendChild(eachMaxYear)
+    if (year >= minYear) {
+      const eachMaxYear = document.createElement('option')
+      eachMaxYear.setAttribute('value', year)
+      eachMaxYear.textContent = year
+      selectMaxYear.appendChild(eachMaxYear)
+    }
   })
 }
 
@@ -90,10 +98,17 @@ function getDatasets (annualRainfall) {
   return datasets
 }
 
-function drawChart (chartData) {
+function getChartData (annualRainfall) {
+  return {
+    labels: months,
+    datasets: getDatasets(annualRainfall)
+  }
+}
+
+function drawChart (barChartData) {
   const ctx = document.querySelector('#chart').getContext('2d')
   const chart = new Chart(ctx)
-  chart.Bar(chartData)
+  chart.Bar(barChartData)
 }
 
 fetch('assets/data/rainfall.json')
@@ -102,16 +117,16 @@ fetch('assets/data/rainfall.json')
   })
   .then(rainfall => {
     const annualRainfall = addYearToDataset(rainfall)
+    window.localStorage.setItem('annualRainfall', JSON.stringify(annualRainfall))
+
     const everyYear = getEveryYear(rainfall)
-    populateSelection(everyYear)
-    const chartData = {
-      labels: months,
-      datasets: getDatasets(annualRainfall)
-    }
-    // drawChart(chartData)
-    const ctx = document.querySelector('#chart').getContext('2d')
-    const chart = new Chart(ctx)
-    chart.Bar(chartData)
+    window.localStorage.setItem('everyYear', JSON.stringify(everyYear))
+    populateSelection(everyYear, 0)
+
+    const barChartData = getChartData(annualRainfall)
+    window.localStorage.setItem('barChartData', JSON.stringify(barChartData))
+
+    drawChart(barChartData)
   })
   .catch(err => {
     throw err
