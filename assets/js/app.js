@@ -90,6 +90,12 @@ function getDatasets (annualRainfall) {
   return datasets
 }
 
+function drawChart (chartData) {
+  const ctx = document.querySelector('#chart').getContext('2d')
+  const chart = new Chart(ctx)
+  chart.Bar(chartData)
+}
+
 fetch('assets/data/rainfall.json')
   .then(res => {
     return res.json()
@@ -102,6 +108,7 @@ fetch('assets/data/rainfall.json')
       labels: months,
       datasets: getDatasets(annualRainfall)
     }
+    // drawChart(chartData)
     const ctx = document.querySelector('#chart').getContext('2d')
     const chart = new Chart(ctx)
     chart.Bar(chartData)
