@@ -1,7 +1,7 @@
 'use strict'
 import 'whatwg-fetch'
 import Chart from 'chart.js'
-const _ = require('lodash')
+import _ from 'lodash'
 const minYear = 2013
 const maxYear = 2014
 
