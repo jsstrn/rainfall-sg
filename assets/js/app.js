@@ -1,9 +1,9 @@
 'use strict'
-
+import 'whatwg-fetch'
+import Chart from 'chart.js'
+const _ = require('lodash')
 const minYear = 2013
 const maxYear = 2014
-const Chart = require('chart.js')
-const _ = require('lodash')
 
 const months = [
   'January', 'February', 'March',
