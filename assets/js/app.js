@@ -41,7 +41,6 @@ function renderChart (rawRainfallData) {
   annualRainfall.push(filterRainfallData(rawRainfallData, 2005, 2015))
   const allCharts = Array.from(document.querySelectorAll('canvas'))
   allCharts.forEach((thisChart, index) => {
-    console.log(thisChart)
     const context = thisChart.getContext('2d')
     const chart = new Chart(context)
     chart.Bar({
@@ -56,20 +55,7 @@ function renderChart (rawRainfallData) {
   })
 }
 
-function getMinYear () {
-  return 1975
-  // this returns undefined for some reason
-  // return Number(document.querySelector('#min-year').value)
-}
-
-function getMaxYear () {
-  return 1976
-  // this returns undefined for some reason
-  // return Number(document.querySelector('#max-year').value)
-}
-
 function filterRainfallData (rawRainfallData, minYear, maxYear) {
-  console.log(minYear, maxYear)
   function yearRange (element) {
     return (element.year >= minYear && element.year <= maxYear)
   }
