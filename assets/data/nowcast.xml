@@ -1,0 +1,57 @@
+<channel>
+    <title>Singapore - Nowcast and Forecast</title>
+    <source>Meteorological Services Division, NEA</source>
+    <description>3 hour Forecast</description>
+    <item>
+        <title>Nowcast Table</title>
+        <category>Singapore Weather Conditions</category>
+        <issue_datentime>FROM 3:00 PM TO 6:00 PM --&lt;br&gt;&lt;font size=1&gt;Updated at 03:00 PM on 14-01-2016</issue_datentime>
+        <weatherForecast>
+            <area name="ANG MO KIO" forecast="Partly cloudy       " icon="PC" zone="C" lat="1.37000000" lon="103.84940000"/>
+            <area name="BEDOK" forecast="Showers             " icon="SH" zone="E" lat="1.32403830" lon="103.92003560"/>
+            <area name="BISHAN" forecast="Partly cloudy       " icon="PC" zone="C" lat="1.35120000" lon="103.84850000"/>
+            <area name="BUKIT BATOK" forecast="Partly cloudy       " icon="PC" zone="W" lat="1.34910000" lon="103.74970000"/>
+            <area name="BUKIT PANJANG" forecast="Showers             " icon="SH" zone="C" lat="1.38080000" lon="103.76250000"/>
+            <area name="BUKIT TIMAH" forecast="Showers             " icon="SH" zone="C" lat="1.33347400" lon="103.79685400"/>
+            <area name="CHANGI" forecast="Showers             " icon="SH" zone="E" lat="1.35920000" lon="103.98940000"/>
+            <area name="CHOA CHU KANG" forecast="Showers             " icon="SH" zone="W" lat="1.38510000" lon="103.74443000"/>
+            <area name="CITY" forecast="Partly cloudy       " icon="PC" zone="S" lat="1.28780000" lon="103.85190000"/>
+            <area name="CLEMENTI" forecast="Showers             " icon="SH" zone="W" lat="1.31435200" lon="103.76523590"/>
+            <area name="CHAI CHEE" forecast="Showers             " icon="SH" zone="E" lat="1.32553700" lon="103.92238100"/>
+            <area name="HOLLAND VILLAGE" forecast="Showers             " icon="SH" zone="S" lat="1.31098800" lon="103.79506400"/>
+            <area name="HOUGANG" forecast="Partly cloudy       " icon="PC" zone="E" lat="1.37258100" lon="103.89365390"/>
+            <area name="JURONG INDUSTRIAL ESTATE" forecast="Showers             " icon="SH" zone="W" lat="1.32500000" lon="103.69500000"/>
+            <area name="JURONG EAST/WEST" forecast="Showers             " icon="SH" zone="W" lat="1.34450000" lon="103.70600000"/>
+            <area name="KALLANG" forecast="Showers             " icon="SH" zone="E" lat="1.31155000" lon="103.87109800"/>
+            <area name="KATONG" forecast="Showers             " icon="SH" zone="E" lat="1.30286810" lon="103.89713500"/>
+            <area name="KRANJI" forecast="Showers             " icon="SH" zone="N" lat="1.42970500" lon="103.74046300"/>
+            <area name="LIM CHU KANG" forecast="Showers             " icon="SH" zone="W" lat="1.40896530" lon="103.70118500"/>
+            <area name="MACPHERSON" forecast="Showers             " icon="SH" zone="E" lat="1.32665000" lon="103.89001800"/>
+            <area name="MACRITCHIE RESERVOIR" forecast="Showers             " icon="SH" zone="C" lat="1.34178700" lon="103.83411500"/>
+            <area name="MARINE PARADE" forecast="Showers             " icon="SH" zone="E" lat="1.30228800" lon="103.90623700"/>
+            <area name="PANDAN" forecast="Showers             " icon="SH" zone="W" lat="1.30824650" lon="103.75542919"/>
+            <area name="PASIR PANJANG" forecast="Partly cloudy       " icon="PC" zone="S" lat="1.27620000" lon="103.79140000"/>
+            <area name="PASIR RIS" forecast="Partly cloudy       " icon="PC" zone="E" lat="1.37000000" lon="103.94800000"/>
+            <area name="PUNGGOL" forecast="Partly cloudy       " icon="PC" zone="N" lat="1.39933000" lon="103.90628800"/>
+            <area name="PEIRCE RESERVOIR" forecast="Showers             " icon="SH" zone="C" lat="1.37341700" lon="103.81135900"/>
+            <area name="PULAU TEKONG" forecast="Partly cloudy       " icon="PC" zone="E" lat="1.40810000" lon="104.05580000"/>
+            <area name="PULAU UBIN" forecast="Partly cloudy       " icon="PC" zone="E" lat="1.40940000" lon="103.96000000"/>
+            <area name="JURONG ISLAND" forecast="Showers             " icon="SH" zone="W" lat="1.26670000" lon="103.69580000"/>
+            <area name="QUEENSTOWN" forecast="Partly cloudy       " icon="PC" zone="S" lat="1.29438800" lon="103.80586600"/>
+            <area name="SELETAR" forecast="Showers             " icon="SH" zone="N" lat="1.41690000" lon="103.86780000"/>
+            <area name="SEMBAWANG" forecast="Showers             " icon="SH" zone="N" lat="1.44918200" lon="103.82011400"/>
+            <area name="SENTOSA" forecast="Partly cloudy       " icon="PC" zone="S" lat="1.24800000" lon="103.83000000"/>
+            <area name="SERANGOON" forecast="Partly cloudy       " icon="PC" zone="C" lat="1.35344640" lon="103.87238300"/>
+            <area name="SIMEI" forecast="Showers             " icon="SH" zone="E" lat="1.34340000" lon="103.95320000"/>
+            <area name="SOUTHERN ISLAND" forecast="Partly cloudy       " icon="PC" zone="S" lat="1.22372400" lon="103.85410300"/>
+            <area name="TAMPINES" forecast="Showers             " icon="SH" zone="E" lat="1.35308100" lon="103.94519100"/>
+            <area name="TOA PAYOH" forecast="Partly cloudy       " icon="PC" zone="C" lat="1.33270200" lon="103.84780800"/>
+            <area name="TUAS" forecast="Showers             " icon="SH" zone="W" lat="1.33645100" lon="103.64707000"/>
+            <area name="TELOK BLANGAH" forecast="Partly cloudy       " icon="PC" zone="S" lat="1.27060000" lon="103.80970000"/>
+            <area name="UPPER BUKIT TIMAH" forecast="Showers             " icon="SH" zone="C" lat="1.37084300" lon="103.76402400"/>
+            <area name="WEST COAST" forecast="Showers             " icon="SH" zone="W" lat="1.29823900" lon="103.76310100"/>
+            <area name="WOODLANDS" forecast="Showers             " icon="SH" zone="N" lat="1.43604600" lon="103.78605700"/>
+            <area name="YISHUN" forecast="Showers             " icon="SH" zone="N" lat="1.42608380" lon="103.84047400"/>
+        </weatherForecast>
+    </item>
+</channel>
