@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "dev": "npm run watch & npm run watch",
+    "dev": "npm run watch & npm run sync",
     "build": "browserify ./assets/js/app.js -o ./assets/js/bundle.js -t babelify",
     "watch": "watchify ./assets/js/app.js -o ./assets/js/bundle.js -t babelify -d -v",
     "sync": "browser-sync start --server --files '**/*'"
