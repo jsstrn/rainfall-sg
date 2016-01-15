@@ -3,6 +3,13 @@ import 'whatwg-fetch'
 import Chart from 'chart.js'
 import _ from 'lodash'
 
+const months = [
+  'January', 'February', 'March',
+  'April', 'May', 'June',
+  'July', 'August', 'September',
+  'October', 'November', 'December'
+]
+
 function getColors () {
   const red = Math.round(Math.random() * 255)
   const green = Math.round(Math.random() * 255)
@@ -44,12 +51,7 @@ function renderChart (rawRainfallData) {
     const context = thisChart.getContext('2d')
     const chart = new Chart(context)
     chart.Bar({
-      labels: [
-        'January', 'February', 'March',
-        'April', 'May', 'June',
-        'July', 'August', 'September',
-        'October', 'November', 'December'
-      ],
+      labels: months,
       datasets: getDatasets(annualRainfall[index])
     })
   })
@@ -87,4 +89,66 @@ function readRainfallData () {
     })
 }
 
+function triggerNotification () {
+  if (window.Notification) {
+    const details = {
+      'body': 'Heavy Rain Warning',
+      'icon': 'http://icons.iconarchive.com/icons/icons8/ios7/64/Weather-Rain-icon.png'
+    }
+    if (window.Notification.permission === 'granted') {
+      const notify = new window.Notification('NEA', details)
+    } else {
+      window.Notification.requestPermission(permission => {
+        if (window.Notification.permission === 'granted') {
+          const notify = new window.Notification('NEA', details)
+        }
+      })
+    }
+  } else {
+    console.log('It\'s raining men!')
+  }
+}
+
+function parseDateTimeString (dateTimeString) {
+  let dt = dateTimeString.split('-')
+  let date = dt[0]
+  date = date.trim()
+  date = date.split(' ')
+  let time = dt[1]
+  time = time.split(' ')
+  time = time[1]
+  time = time.split(':')
+
+  const y = Number(date[2])
+  const m = 0
+  const d = Number(date[0])
+  const h = Number(time[0])
+  const min = Number(time[1])
+  const s = 0
+  const datetime = new Date(y, m, d, h, min, s)
+  return datetime.toISOString()
+}
+
+function checkForHeavyRainWarning () {
+  fetch('assets/data/heavy_rain_warning.xml')
+    .then(res => {
+      return res.text()
+    })
+    .then(heavyRainWarning => {
+      const html = document.createElement('html')
+      html.innerHTML = heavyRainWarning
+      const dateTimeString = html.querySelector('issue_datentime').textContent
+      const dateTimeISO = parseDateTimeString(dateTimeString)
+      const today = new Date(Date.now())
+      const todayISO = today.toISOString()
+      if (dateTimeISO >= todayISO) {
+        triggerNotification()
+      }
+    })
+    .catch(err => {
+      throw err
+    })
+}
+
 readRainfallData()
+checkForHeavyRainWarning()
